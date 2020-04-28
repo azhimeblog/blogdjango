@@ -1,11 +1,125 @@
 {% extends 'blog/base.html' %} {% block content %}
+
+<head>
+
+    <style>
+        .container-fluid {
+            margin: auto;
+            height: 300px;
+            align-items: center;
+            width: 100%;
+            background-color: rgb(82, 82, 82);
+            background-image: url({{ post.content_images.url }});
+        }
+        
+        .container-fluid1 {
+            margin: auto;
+            height: 150px;
+            width: 100%;
+            align-items: center;
+            background-color: rgb(82, 82, 82);
+        }
+        
+        .container {
+            margin-top: 30px;
+            padding: 2px 16px;
+        }
+        
+        .menutext {
+            font-family: 'Athiti', sans-serif;
+            font-size: 30px;
+        }
+        
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+        /* On mouse-over, add a deeper shadow */
+        
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar {
+            font-family: 'Athiti', sans-serif;
+        }
+        
+        .nav-link {
+            font-family: 'Athiti', sans-serif;
+            font-size: 20px;
+            padding-right: 10px;
+        }
+        
+        .h3 {
+            font-family: 'Athiti', sans-serif;
+        }
+        
+        .h1 {
+            font-family: 'Athiti', sans-serif;
+        }
+        
+        .column {
+            margin: auto;
+        }
+        
+        .footer {
+            width: auto;
+            height: auto;
+        }
+        
+        .header {
+            height: auto;
+            width: auto;
+        }
+        
+        .fixed-bottom {
+            margin-top: 50px;
+        }
+        
+        .vertical-center {
+            text-align: center;
+            align-self: center;
+            padding-top: 30px;
+        }
+        
+        .text-center {
+            text-align: center;
+            align-self: center;
+        }
+        
+        .post {
+            margin: auto;
+            padding-right: 10%;
+            padding-left: 10%;
+            padding-top: 20px;
+            font-family: 'Athiti', sans-serif;
+        }
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Athiti&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>{{ post.title }}</title>
+
+</head>
+
+<div class="container-fluid">
+    <h2>{{ post.title }}</h2>
+
+</div>
+
 <div class="post">
-    {% if post.published_date %}
-    <div class="date">
-        {{ post.published_date }}
-    </div>
-    {% endif %}
     <h2>{{ post.title }}</h2>
     <p>{{ post.content|safe }}</p>
 </div>
+
 {% endblock %}

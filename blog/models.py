@@ -15,6 +15,7 @@ class Post(models.Model):
     post_viewcount = models.PositiveIntegerField(default=0)
     slug = models.SlugField(max_length=200, default='Enter SEO URL')
     status = models.IntegerField(choices=STATUS , default=0)
+    
 
     def publish(self):
         self.published_date = timezone.now()
@@ -22,3 +23,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
