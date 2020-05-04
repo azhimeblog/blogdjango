@@ -3,7 +3,9 @@ from . import views
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
-    path('<slug:slug>/', views.post_detail, name='post_detail'),
+    path('content/createcontent/', views.create_post, name='create_post'),
+    path('article/<slug:slug>/', views.post_detail, name='post_detail'),
+
 ]
 
 from django.conf import settings
