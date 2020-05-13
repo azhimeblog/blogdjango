@@ -41,5 +41,6 @@ def cat_list(request):
     return render(request, 'blog/categories.html', {'categories': categories})
 
 def category_detail(request, slug):
-    category = Category.objects.get(slug=slug)
+    category = get_object_or_404(Category, slug=slug)
     return render(request, 'blog/category_detail.html', {'category': category})
+

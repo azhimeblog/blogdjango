@@ -100,21 +100,22 @@
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>{{ category.title }} </title>
+    <title>{{ category.title }}</title>
 </head>
 
-
+<h1> {{ category.title }} </h1>
 <div class="container">
     <div class="row">
 
-        {% for category in categories %}
+        {% for post in category.post_set.all %}
         <div class="column">
             <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="#" alt="{{ category.title }}">
+                <img class="card-img-top" src="{{ post.content_images.url }}" alt="{{ post.title }}">
                 <div class="card-body">
-                    <b><p class="card-text"> <a href="{% url 'category_detail' category.slug %}"> {{ category.title }} </a></p></b>
-                    <p class="card-text"> {{ category.content|safe|slice:":200" }}</p>
-                    <div align="center"><button type="button" class="btn btn-outline-secondary"> <a href="{% url 'category_detail' category.slug %}">  ดูบทความในหมวดหมู่นี้ </a></button> </div>
+                    <b><p class="card-text"> <a href="{% url 'post_detail' post.slug %}"> {{ post.categories.title }} </a></p></b>
+                    <p> เขียนโดย {{ post.author }}</p>
+                    <p class="card-text"> {{ post.content|safe|slice:":200" }}</p>
+                    <div align="center"><button type="button" class="btn btn-outline-secondary"> <a href="{% url 'post_detail' post.slug %}">  อ่านเรื่องนี้ต่อ </a></button> </div>
                 </div>
             </div>
         </div>
