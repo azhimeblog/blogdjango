@@ -1,10 +1,13 @@
 from django.urls import path
+from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
-    path('content/createcontent/', views.create_post, name='create_post'),
+    path('createcontent/', views.create_post, name='create_post'),
     path('article/<slug:slug>/', views.post_detail, name='post_detail'),
+    path('category/', views.cat_list, name='category'),
+    path('category/<slug:slug>/', views.category_detail, name='category_detail'),
 
 ]
 

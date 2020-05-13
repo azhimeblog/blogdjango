@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Post
 from .forms import Createcontent
 from django.shortcuts import redirect
+from .models import Category
 
 
 
@@ -34,3 +35,11 @@ def create_post(request):
     else:
         form = Createcontent()
     return render(request, 'blog/post_creator.html', {'form': form})
+
+def cat_list(request):
+    categories = Category.objects.all()
+    return render(request, 'blog/categories.html', {'categories': categories})
+
+def category_detail(request, slug):
+    category = Category.objects.get(slug=slug)
+    return render(request, 'blog/category_detail.html', {'category': category})

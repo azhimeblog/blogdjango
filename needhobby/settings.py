@@ -25,7 +25,7 @@ SECRET_KEY = 'dq8_$w32zixe45k$y5nw+2oj^^0&qp!&jf+ri_1ki%^(8%_c8b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','95136046.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1','7802cd7c.ngrok.io']
 
 
 # Application definition
@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
