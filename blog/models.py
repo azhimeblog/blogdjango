@@ -27,7 +27,7 @@ class Post(models.Model):
     id = models.AutoField
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    content_images = models.ImageField(default='media/noimg-l.jpg')
+    content_images = models.ImageField(upload_to='media')
     title = models.CharField(max_length=200,unique=True,default='ใส่ชื่อบทความ')
     content = models.TextField(default='ใส่เนื้อหาบทความ')
     created_date = models.DateTimeField(default=timezone.now)
